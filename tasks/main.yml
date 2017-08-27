@@ -1,0 +1,7 @@
+- name: disable PC speaker
+  copy:
+    src: nobeep.conf
+    dest: /etc/modprobe.d/nobeep.conf
+    owner: root
+    group: root
+    mode: 0644
