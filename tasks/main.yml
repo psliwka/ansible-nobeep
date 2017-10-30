@@ -1,4 +1,9 @@
-- name: disable PC speaker
+- name: unload PC speaker module
+  modprobe:
+    name: pcspkr
+    state: absent
+
+- name: prevent PC speaker module from loading at boot time
   copy:
     src: nobeep.conf
     dest: /etc/modprobe.d/nobeep.conf
